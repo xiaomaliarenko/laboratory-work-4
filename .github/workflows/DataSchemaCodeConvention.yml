@@ -24,3 +24,4 @@ jobs:
         run: |
           python -m sqlfluff lint ${{ github.workspace }}/DataSchema.sql --dialect postgres
           
+
