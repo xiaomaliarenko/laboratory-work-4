@@ -17,8 +17,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install SQLFluff
-        run: python -m pip install sqlfluff
+        run: pip install sqlfluff
         
       - name: Start SQL Linter (Check Modified Schema)
         run: |
-          python -m sqlfluff fix .github/workflows/DataSchemaModified.sql --dialect postgres
+          # Перевіряємо модифікований файл, який тепер має бути ЧИСТИМ
+          sqlfluff lint .github/workflows/DataSchemaModified.sql --dialect postgres
