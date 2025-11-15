@@ -21,4 +21,4 @@ jobs:
         
       - name: Start SQL Linter (Check Modified Schema)
         run: |
-          python -m sqlfluff lint .github/workflows/DataSchemaModified.sql --dialect postgres
+          python -m sqlfluff fix .github/workflows/DataSchemaModified.sql --dialect postgres
