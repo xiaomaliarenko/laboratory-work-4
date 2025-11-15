@@ -6,7 +6,7 @@ CREATE TABLE users (
 
 CREATE TABLE profiles (
     id                NUMBER NOT NULL PRIMARY KEY,
-    user_id           NUMBER NOT NULL UNIQUE REFERENCES users (id), -- Виправлено пробіли
+    user_id           NUMBER NOT NULL UNIQUE REFERENCES users (id),
     interest_name     VARCHAR(100) NOT NULL,
     region_name       VARCHAR(50) NOT NULL
 );
@@ -22,14 +22,14 @@ CREATE TABLE contests (
 
 CREATE TABLE materials (
     id                NUMBER NOT NULL PRIMARY KEY,
-    user_id           NUMBER NOT NULL REFERENCES users (id), -- Виправлено пробіли
+    user_id           NUMBER NOT NULL REFERENCES users (id),
     name_name         VARCHAR(100) NOT NULL,
     type_name         VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE instructions (
     id                NUMBER NOT NULL PRIMARY KEY,
-    material_id       NUMBER NOT NULL UNIQUE REFERENCES materials (id), -- Виправлено пробіли
+    material_id       NUMBER NOT NULL UNIQUE REFERENCES materials (id),
     content_text      VARCHAR(2000) NOT NULL,
     adaptation_status VARCHAR(50) NOT NULL
 );
