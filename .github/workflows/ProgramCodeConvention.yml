@@ -1,0 +1,19 @@
+name: Java Code Linter
+
+on:
+  push:
+    branches: [ laboratory-work-4 ] 
+
+jobs:
+  JavaLinter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code in Repository
+        uses: actions/checkout@v3
+
+      - name: Lint Java Code (Checkstyle)
+        uses: github/super-linter@v4 
+        env:
+          VALIDATE_JAVA: true 
+          FILTER_REGEX_INCLUDE: ./*.java 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
