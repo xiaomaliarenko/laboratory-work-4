@@ -2,7 +2,7 @@ name: Print Software Versions Check
 
 on:
   push:
-    branches: [ Lab_SW4 ] 
+    branches: [ laboratory-work-4 ] 
 
 jobs:
   PrintLanguageVersions:
