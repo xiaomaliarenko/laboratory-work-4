@@ -1,7 +1,7 @@
 CREATE TABLE users (
     id                NUMBER NOT NULL PRIMARY KEY,
     username_name     VARCHAR(50) NOT NULL UNIQUE,
-    CONSTRAINT check_username_format CHECK (username_name REGEXP '^[a-zA-Z0-9]{3,}$')
+    CONSTRAINT check_username_format CHECK (username_name ~ '^[a-zA-Z0-9]{3,}$')
 );
 
 CREATE TABLE profiles (
@@ -17,7 +17,7 @@ CREATE TABLE contests (
     deadline_date     TIMESTAMP NOT NULL,
     status_status     VARCHAR(50) NOT NULL,
     CONSTRAINT check_status CHECK (status_status IN ('Відкрита реєстрація', 'Очікується', 'Архів')),
-    CONSTRAINT check_contest_name CHECK (name_name REGEXP '^[А-ЯA-Z].*\s.*$')
+    CONSTRAINT check_contest_name CHECK (name_name ~ '^[А-ЯA-Z].*\s.*$')
 );
 
 CREATE TABLE materials (
